@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+picture, img {
+    max-width: 100%;
+    display: block;
+}
+
+/* FOR DESKTOP */
+
+body {
+    background-color: hsl(233, 47%, 7%);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: hsla(0, 0%, 100%, 0.75);
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+
+.card {
+    max-width: 991px;
+    display: grid;
+    grid-template-columns: 52% 48%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 60px;
+}
+
+.image-container {
+    background-color: hsl(277, 64%, 61%);
+    grid-column: 2;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mix-blend-mode: multiply;
+    opacity: .75;
+}
+
+.text-container {
+    grid-row: 2 / 1;
+    background-color: hsl(244, 38%, 16%);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    padding: 4em 4em 3em 4em;
+}
+
+header h1 {
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0.8px;
+    font-size: 2rem;    
+}
+
+header .accent {
+    color: hsl(277, 64%, 61%);
+}
+
+header .subtitle {
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.6;
+    padding-right: 2.5em;
+    font-size: 1em;
+}
+
+.stats-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 7em 4em 4em;
+}
+
+.stats-number {
+    color: #fff;
+    font-size: 1.7em;
+    line-height: 1.7em;
+    font-weight: 700;
+}
+
+.stats-name {
+    text-transform: uppercase;
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    font-size: .8em;
+    letter-spacing: .1em;
+}
+
+/* FOR MOBILE */
+
+@media only screen and (max-width: 850px) {
+    .card {
+        max-width: 575px;
+        grid-template-columns: 1fr;
+        margin: 80px 32px;
+    }
+    .image-container {
+        grid-area: 1;
+    }
+    .text-container {
+        grid-area: 2;     
+    }
+    header {
+        text-align: center;
+        padding: 3em 2em 2em 2em;
+    }
+    header .subtitle {
+        padding: 0 40px;
+        font-size: 15px;
+    }
+    .stats-list {
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0 40px 0;
+    }
+    .stats-name {
+        padding-bottom: 25px;
+    }
+}
